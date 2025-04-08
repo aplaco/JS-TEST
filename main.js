@@ -1,16 +1,18 @@
 /*
-  문자를 숫자로 형변환 처리
-  parseInt(문자화된 숫자) : 정수 변환
-  parseFloat(문자화된 숫자) : 실수 변환
+  미션 1 : 사용자 정보를 파라미터로 전달받아서 콘솔문으로 출력해주는 함수 제작 (20분 까지)
+  1. 파라미터로 사용자이름, 나이, 성별을 전달받도록 처리
+  2. 함수 내부에서는 전달받은 파라미터값을 활용해서 "홍길동님의 나이는 20살이고 성별은 남성입니다."라고 출력
+  3. 대입형 함수로 제작(화살표 함수 활용)
+  4. 3개의 인자값중 하나라도 없으면 "올바른 정보를 입력하세요!"라는 경고문구 출력
 */
 
-let num = "3.5";
-console.log(typeof num); //string
-
-//문자화된 숫자값을 정수로 형변환해서 다시 num변수에 재할당
-//num = parseInt(num);
-
-//문자화된 숫자값을 실수로 형변환해서 다시 num변수에 재할당
-num = parseFloat(num);
-console.log(typeof num);
-console.log(num);
+const showInfo = (name, age, gender) => {
+    if (!name || !age || !gender) {
+      //name, age, gender값이 하나라도 없으면 실행되는 구문
+      console.error("정보를 올바르게 입력하세요.");
+    } else {
+      console.log(`${name}님의 나이는 ${age}살이고 성별은 ${gender}입니다.`);
+    }
+  };
+  
+  showInfo("홍길동", 20, "남성");

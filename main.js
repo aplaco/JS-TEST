@@ -1,37 +1,38 @@
 /*
-  함수 (function)
-  : 자주쓰는 구문들을 그룹핑해서 통채로 재활용하기 위한 코드 모음집
-
-  함수 만드는 방법
-  - 선언적 함수 : function키워드로 선언방식 (호출위치가 자유로움)
-  - 대입형 함수 : 변수에 화살표 함수를 대입하는 방식 (선언 이후에 호출 가능)
-
-  매개변수 (parameter) : 함수외부터 특정 값을 내부로 전달해주는 통로명 
-  인자 (argument) : 매개변수를 통해 실제 전달되는 실질적인 값
+  조건문
+  : 조건식을 만들어서 조건식이 true, false인지에 따라서 코드 분기처리하는 식
+  
+  if(조건식1){
+    조건식1이 참이면 이 코드블록 안쪽의 구문이 실행되면서 조건문 종료
+    조건식1이 거짓이면 다음 조건식2로 넘어감
+  }else if(조건식2){
+    조건식2가 참이면 이 코드블록 안쪽의 구문이 실행되면서 조건문 종료
+    조건식2가 거짓이면 다음 조건식2로 넘어감
+  }else {
+    만약 위의 조건식이 거짓이면 이곳의 구문을 실행하고 조건문 강제 종료
+  }
 */
 
-//함수 호출 : 선언적 함수는 선언되기 전에 호출 가능 (호이스팅 발생 : hoisting)
-plus(2, 3);
-plus(345, 1234);
-
-// plus란 이름의 선언적 방식으로 함수 선언: 실행할 기능모음을 정의
-function plus(n1, n2) {
-  let result = n1 + n2;
-  console.log(result);
-}
-
-// ES5버전의 정의형 함수
-const minus = function (num1, num2) {
-  let result = num1 - num2;
-  console.log(result);
-};
-
-minus(5, 3);
-
-// ES6버전의 정의형 함수 (화살표함수: Arrow function)
-const divider = (n1, n2) => {
-  let result = n1 / n2;
-  console.log(result);
-};
-
-divider(6, 2);
+const calculator = (n1, n2, how) => {
+    if (how === "+") {
+      console.log(n1 + n2);
+    } else if (how === "-") {
+      console.log(n1 - n2);
+    } else if (how === "*") {
+      console.log(n1 * n2);
+    } else if (how === "/") {
+      console.log(n1 / n2);
+    } else {
+      console.error("세번째 매개변수 값이 잘못 전달되었습니다.");
+    }
+  };
+  
+  calculator(2, 3);
+  
+  /*
+  calculator(2, 3, "+");
+  calculator(2, 3, "-");
+  calculator(2, 3, "*");
+  calculator(2, 3, "/");
+  추가 기능 : 사칙연산 4가지 기호 외의 값이 3번째 매개변수로 전달되면 콘솔문으로 오류메세지 출력 
+  */

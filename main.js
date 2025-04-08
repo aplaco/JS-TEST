@@ -1,35 +1,27 @@
 /*
-  배열과 반복문
+  자바스크립트에서의 형변환
+  기본 자료형이 변경되는 현상
+  - 문자열 --> 숫자화
+  - 숫자 --> 문자화
 
-  배열 : 비슷한 성격의 복수개의 데이터를 그룹핑하기 위한 자료형
-  배열의 데이터를 손쉽게 제어하기 위한 문법 반복문
-
-  for(let i=0; i<최대수치; i++){
-    반복할 코드 입력
-  }
-  i값이 0부터 최대수치값 만큼 {}안쪽의 구문을 반복처리
-
-  배열의 갯수 구하는 법
-  - 배열명.length
-
-  배열 반복처리 내장 함수
-  - 직접 정의하지 않더라도 자주쓰는 기능등을 묶어서 미리 등록한 함수
-
-  배열.forEach(익명함수)
+  실무에서 형변환이 일어나는 대표적 사례
+  문자+숫자를 더했을때 더해지는 숫자(변수)값이 자동으로 문자화 되는 현상
 */
 
-const colors = ["red", "green", "blue", "orange"];
-console.log(colors.length);
-// console.log(colors[0]);
-// console.log(colors[1]);
-// console.log(colors[2]);
+//숫자가 문자화되는 대표적인 예시
+let str = "1";
+let num1 = 1;
+let num2 = 2;
+console.log(str + num1 + num2);
+console.log(num1 + num2 + str);
 
-for (let i = 0; i < colors.length; i++) {
-  console.log(colors[i]);
-}
+//변수가 문자화되는 대표적인 예시
+let myName = "홍길동";
 
-colors.forEach((data, index) => {
-  console.log(data);
-  console.log(index);
-  console.log("---------");
-});
+console.log("제 이름은 myName입니다."); // 제이름은 myName입니다. 변수가 문자화
+
+//위와 같은 문제를 해결하기 위해서는 문자열과 변수를 분리해서 +연산자로 연결
+console.log("제 이름은 " + myName + "입니다.");
+
+//위와 같은 번거로움을 개선하고자 ES6에서는 문자열 템플릿 문법이 생김
+console.log(`제 이름은 ${myName}입니다.`);

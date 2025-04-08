@@ -31,3 +31,8 @@ console.log(myColors[0]);
 
 //객체값 추출 : 객체명.프로퍼티명
 console.log(myInfo.name);
+
+/*
+   undefined : 있어야될 값이 없을때 (에러 상황)
+   null : 일부러 값을 초기에 비워둘떄 (에러 아님)
+ */

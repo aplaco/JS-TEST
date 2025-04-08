@@ -1,18 +1,33 @@
 /*
-  미션 1 : 사용자 정보를 파라미터로 전달받아서 콘솔문으로 출력해주는 함수 제작 (20분 까지)
-  1. 파라미터로 사용자이름, 나이, 성별을 전달받도록 처리
-  2. 함수 내부에서는 전달받은 파라미터값을 활용해서 "홍길동님의 나이는 20살이고 성별은 남성입니다."라고 출력
-  3. 대입형 함수로 제작(화살표 함수 활용)
-  4. 3개의 인자값중 하나라도 없으면 "올바른 정보를 입력하세요!"라는 경고문구 출력
+  DOM스크립트
+
+  DOM (Document Object Model)
+  -html태그를 브라우저가 해석해서 자바스크립트가 제어 가능한 형태로 변환된 객체
+
+  DOM선택
+  DOM 정보 출력
+  DOM 텍스트 정보 변경
+  DOM 스타일 정보 변경
+  DOM 속성 정보 변경
+  DOM에 이벤트 연결
 */
 
-const showInfo = (name, age, gender) => {
-    if (!name || !age || !gender) {
-      //name, age, gender값이 하나라도 없으면 실행되는 구문
-      console.error("정보를 올바르게 입력하세요.");
-    } else {
-      console.log(`${name}님의 나이는 ${age}살이고 성별은 ${gender}입니다.`);
-    }
-  };
-  
-  showInfo("홍길동", 20, "남성");
+//h1태그 요소를 돔스크립트로 선택
+const h1 = document.querySelector("h1");
+const link = document.querySelector("a");
+console.log(h1);
+console.dir(h1);
+console.dir(link);
+
+//DOM의 텍스트 변경
+//h1.innerText = "김영희";
+
+//DOM의 html 구조 변경
+//h1.innerHTML = "<span>김판섭</span>";
+
+//DOM스타일 변경
+h1.style.color = "aqua";
+
+//DOM 속성 변경
+link.href = "https://www.nate.com";
+link.innerText = "네이트";

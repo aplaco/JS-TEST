@@ -28,11 +28,13 @@
   position: absolute;
   top: 0px;
   right: -100%;
+  opacity: 0;
   transition: 0.5s;
 }
 /* 활성화 상태일떄 (on클래스 있을때) */
 .frame .mobileMenu.on {
   right: 0%;
+  opacity: 1;
 }
 .frame .mobileMenu .btnClose {
   position: absolute;
